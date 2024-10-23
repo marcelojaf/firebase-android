@@ -1,3 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Androidlytics</string>
+
+    <!-- Counter Section -->
+    <string name="counter_value">Counter: %1$d</string>
+    <string name="btn_increment">Increment Counter</string>
+
+    <!-- Exception Section -->
+    <string name="exception_section_title">Exception Test</string>
+    <string name="btn_generate_exception">Generate Controlled Exception</string>
+    <string name="exception_message">Controlled test exception</string>
+
+    <!-- Crash Section -->
+    <string name="crash_section_title">Danger Zone</string>
+    <string name="btn_force_crash">Force App Crash</string>
+    <string name="crash_message">Intentional app crash</string>
 </resources>

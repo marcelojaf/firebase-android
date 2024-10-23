@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Androidlytics</string>
+    <string name="counter_value">Contador: %1$d</string>
+    <string name="btn_increment">Incrementar Contador</string>
+    <string name="exception_section_title">Teste de Exceção</string>
+    <string name="btn_generate_exception">Gerar Exceção Controlada</string>
+    <string name="exception_message">Exceção de teste controlada</string>
+    <string name="crash_section_title">Área de Perigo</string>
+    <string name="btn_force_crash">Forçar Crash do App</string>
+    <string name="crash_message">Crash proposital do app</string>
+</resources>
