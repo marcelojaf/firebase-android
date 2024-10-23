@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Androidlytics</string>
+    <string name="app_title">Laboratório de Teste Firebase Analytics</string>
     <string name="counter_value">Contador: %1$d</string>
     <string name="btn_increment">Incrementar Contador</string>
     <string name="exception_section_title">Teste de Exceção</string>

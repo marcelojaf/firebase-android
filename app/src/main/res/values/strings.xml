@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Androidlytics</string>
+    <string name="app_title">Firebase Analytics Test Lab</string>
 
     <!-- Counter Section -->
     <string name="counter_value">Counter: %1$d</string>
