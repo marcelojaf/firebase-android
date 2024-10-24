@@ -1,14 +1,16 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
-    namespace = "com.cklabs.androidlytics"
+    namespace = "com.cklabs.analyticstestlab"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.cklabs.androidlytics"
+        applicationId = "com.cklabs.analyticstestlab"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
@@ -51,6 +53,9 @@ android {
 
 dependencies {
 
+    implementation(platform("com.google.firebase:firebase-bom:32.7.2"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-crashlytics-ktx")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

@@ -1,4 +1,4 @@
-package com.cklabs.androidlytics
+package com.cklabs.analyticstestlab
 
 import org.junit.Test
 

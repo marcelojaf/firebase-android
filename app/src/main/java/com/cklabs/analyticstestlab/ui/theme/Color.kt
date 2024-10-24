@@ -1,4 +1,4 @@
-package com.cklabs.androidlytics.ui.theme
+package com.cklabs.analyticstestlab.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
