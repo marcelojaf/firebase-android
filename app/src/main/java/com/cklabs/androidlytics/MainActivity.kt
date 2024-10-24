@@ -11,6 +11,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -37,6 +38,14 @@ class MainActivity : ComponentActivity() {
 fun MainContent(modifier: Modifier = Modifier) {
     var counter by remember { mutableIntStateOf(0) }
     val context = LocalContext.current
+
+    // Definindo as cores personalizadas
+    val blueColor = Color(0xFF007AFF)
+    val blueBgColor = Color(0x33007AFF) // 20% de opacidade
+    val orangeColor = Color(0xFFFF9500)
+    val orangeBgColor = Color(0x33FF9500) // 20% de opacidade
+    val redColor = Color(0xFFFF3B30)
+    val redBgColor = Color(0x33FF3B30) // 20% de opacidade
 
     val handleControlledExceptionClick: () -> Unit = {
         try {
@@ -86,14 +95,14 @@ fun MainContent(modifier: Modifier = Modifier) {
             Column(
                 modifier = Modifier
                     .padding(16.dp)
-                    .fillMaxHeight(),
+                    .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 // Counter Section
                 Surface(
                     modifier = Modifier.fillMaxWidth(),
-                    color = MaterialTheme.colorScheme.surfaceVariant,
+                    color = blueBgColor,
                     shape = MaterialTheme.shapes.medium
                 ) {
                     Column(
@@ -102,22 +111,29 @@ fun MainContent(modifier: Modifier = Modifier) {
                     ) {
                         Text(
                             text = stringResource(R.string.counter_value, counter),
-                            style = MaterialTheme.typography.headlineMedium,
-                            textAlign = TextAlign.Center
+                            style = MaterialTheme.typography.titleMedium
                         )
                         Spacer(modifier = Modifier.height(8.dp))
-                        Button(onClick = { counter++ }) {
-                            Text(stringResource(R.string.btn_increment))
+                        Button(
+                            onClick = { counter++ },
+                            modifier = Modifier.fillMaxWidth(),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = blueColor
+                            ),
+                            shape = MaterialTheme.shapes.small
+                        ) {
+                            Text(
+                                text = stringResource(R.string.btn_increment),
+                                modifier = Modifier.padding(8.dp)
+                            )
                         }
                     }
                 }
 
-                Spacer(modifier = Modifier.height(16.dp))
-
                 // Exception Section
                 Surface(
                     modifier = Modifier.fillMaxWidth(),
-                    color = MaterialTheme.colorScheme.surfaceVariant,
+                    color = orangeBgColor,
                     shape = MaterialTheme.shapes.medium
                 ) {
                     Column(
@@ -129,18 +145,26 @@ fun MainContent(modifier: Modifier = Modifier) {
                             style = MaterialTheme.typography.titleMedium
                         )
                         Spacer(modifier = Modifier.height(8.dp))
-                        Button(onClick = handleControlledExceptionClick) {
-                            Text(stringResource(R.string.btn_generate_exception))
+                        Button(
+                            onClick = handleControlledExceptionClick,
+                            modifier = Modifier.fillMaxWidth(),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = orangeColor
+                            ),
+                            shape = MaterialTheme.shapes.small
+                        ) {
+                            Text(
+                                text = stringResource(R.string.btn_generate_exception),
+                                modifier = Modifier.padding(8.dp)
+                            )
                         }
                     }
                 }
 
-                Spacer(modifier = Modifier.height(16.dp))
-
                 // Crash Section
                 Surface(
                     modifier = Modifier.fillMaxWidth(),
-                    color = MaterialTheme.colorScheme.errorContainer,
+                    color = redBgColor,
                     shape = MaterialTheme.shapes.medium
                 ) {
                     Column(
@@ -149,17 +173,21 @@ fun MainContent(modifier: Modifier = Modifier) {
                     ) {
                         Text(
                             text = stringResource(R.string.crash_section_title),
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onErrorContainer
+                            style = MaterialTheme.typography.titleMedium
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Button(
                             onClick = handleCrashClick,
+                            modifier = Modifier.fillMaxWidth(),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = MaterialTheme.colorScheme.error
-                            )
+                                containerColor = redColor
+                            ),
+                            shape = MaterialTheme.shapes.small
                         ) {
-                            Text(stringResource(R.string.btn_force_crash))
+                            Text(
+                                text = stringResource(R.string.btn_force_crash),
+                                modifier = Modifier.padding(8.dp)
+                            )
                         }
                     }
                 }
